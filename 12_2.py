@@ -1,9 +1,6 @@
 import turtle
 from math import sqrt, asin, degrees
 
-
-t = turtle.Turtle
-
 t = turtle.Turtle()
 t.width(2)
 sc = turtle.getscreen()
