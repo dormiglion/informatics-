@@ -1,10 +1,12 @@
 import turtle
 from random import randint
+from turtle import Screen
 
 t = turtle.Turtle()
-sc = turtle.getscreen()
-w, h = sc.window_width(), sc.window_height()
+screen = Screen()
+w, h = 960, 900
 print(w, h)
+screen.setup(w, h)
 t.speed(100)
 
 # ПОЛЕ
@@ -113,19 +115,22 @@ t.goto(120, -30)
 t.goto(60,-30)
 t.end_fill()
 
-for i in range(50):
+ang = (75/160)
+
+for i in range(10**4):
     x = randint(-w/2, w/2)
 
     if -160 < x < 160:
-        y = randint(150, h/2)
+        y = randint(75 + int(((160-abs(x))*ang)), h/2)
+
     else:
-        y = randint(0, h/2)
+        y = randint(3, h/2)
 
     t.penup()
     t.goto(x,y)
     t.color("#fff5c1")
     t.begin_fill()
-    t.circle(3)
+    t.circle(2)
     t.end_fill()
 
 turtle.done()
