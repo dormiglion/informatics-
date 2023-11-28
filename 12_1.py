@@ -1,7 +1,7 @@
 import turtle
 from random import randint
 from turtle import Screen
-
+from math import atan
 t = turtle.Turtle()
 screen = Screen()
 w, h = 960, 900
@@ -115,13 +115,13 @@ t.goto(120, -30)
 t.goto(60,-30)
 t.end_fill()
 
-ang = (75/160)
+ang = atan(75/160)
 
 for i in range(10**4):
     x = randint(-w/2, w/2)
 
     if -160 < x < 160:
-        y = randint(75 + int(((160-abs(x))*ang)), h/2)
+        y = randint(80 + int(((160-abs(x))*ang)), h/2)
 
     else:
         y = randint(3, h/2)
